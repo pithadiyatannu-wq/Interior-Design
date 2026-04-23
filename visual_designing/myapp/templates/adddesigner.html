@@ -1,0 +1,170 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+    <section class="navigation">
+      <div class="parallax parallax--nav-1">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>
+                about us
+              </h2>
+              <ul class="breadcrumbs ul--inline ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">Home</a>
+                </li>
+                <span>/</span>
+                <li>
+                  <a href="#">Pages</a>
+                </li>
+                <span>/</span>
+                <li class="active">
+                  Designer Profile
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+<!---728x90--->
+<section class="vendor-detail">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-10">
+                <div class="vendor-detail-content border shadow-sm p-4 rounded bg-white">
+                    <h3 class="text-center mb-4 text-primary">Designer Detail</h3>
+                    <p class="text-center text-muted mb-4">Please provide your Designer details</p>
+                    <form action="/add_desingner" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <!-- Address Field -->
+                        <div class="form-group mb-3">
+                            <label for="id_address" class="form-label">Address</label>
+                            <textarea
+                                name="address"
+                                id="id_address"
+                                class="form-control rounded-pill"
+                                rows="4"
+                                required></textarea>
+                        </div>
+
+                        <!-- Profile Image -->
+                        <div class="form-group mb-3">
+                            <label for="id_designerprofile_image" class="form-label">Profile Image</label>
+                            <input
+                                type="file"
+                                name="designerprofile_image"
+                                id="id_designerprofile_image"
+                                class="form-control-file"
+                                required
+                                oninput="
+                                    const file = this.files[0];
+                                    if (!file) {
+                                        this.setCustomValidity('Profile image is required');
+                                        this.reportValidity();
+                                    } else {
+                                        const validImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
+                                        if (!validImageTypes.includes(file.type)) {
+                                            this.setCustomValidity('Only JPG, PNG, and GIF images are allowed');
+                                            this.reportValidity();
+                                        } else {
+                                            this.setCustomValidity('');
+                                            this.reportValidity();
+                                        }
+                                    }">
+                        </div>
+
+                        <!-- Shop Name -->
+                        <div class="form-group mb-3">
+                            <label for="id_company_name" class="form-label">Company Name</label>
+                            <input
+                                type="text"
+                                name="company_name"
+                                id="id_company_name"
+                                class="form-control rounded-pill"
+                                placeholder="Enter your Company name"
+                                required>
+                        </div>
+
+                        <!-- Shop Address -->
+                        <div class="form-group mb-3">
+                            <label for="id_company_address" class="form-label">Company Address</label>
+                            <textarea
+                                name="company_address"
+                                id="id_company_address"
+                                class="form-control rounded-pill"
+                                rows="4"
+                                required></textarea>
+                        </div>
+
+                        <!-- Years of Experience -->
+                        <div class="form-group mb-3">
+                            <label for="id_years_of_experience" class="form-label">Years of Experience</label>
+                            <input
+                                type="number"
+                                name="years_of_experience"
+                                id="id_years_of_experience"
+                                class="form-control rounded-pill"
+                                placeholder="Enter years of experience"
+                                required
+                                min="1">
+                        </div>
+
+                        <!-- Specialization -->
+                        <div class="form-group mb-3">
+                            <label for="id_specialization" class="form-label">Specialization</label>
+                            <input
+                                type="text"
+                                name="specialization"
+                                id="id_specialization"
+                                class="form-control rounded-pill"
+                                placeholder="Enter your specialization"
+                                required>
+                        </div>
+
+                        <!-- Ratings -->
+                        <div class="form-group mb-3">
+                            <label for="id_ratings" class="form-label">Ratings</label>
+                            <input
+                                type="number"
+                                name="ratings"
+                                id="id_ratings"
+                                class="form-control rounded-pill"
+                                placeholder="Enter ratings (0-5)"
+                                required
+                                min="0" max="5">
+                        </div>
+
+                        <!-- Availability -->
+                        <div class="form-group mb-3">
+                            <label for="id_availability" class="form-label">Availability</label>
+                            <select
+                                name="availability"
+                                id="id_availability"
+                                class="form-control rounded-pill"
+                                required>
+                                <option value="Available">Available</option>
+                                <option value="Not Available">Not Available</option>
+                            </select>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-block w-100 py-2 rounded-pill shadow">
+                                Save Profile
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{%endblock%}

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+
+
+<!-- Mirrored from freebw.com/templates/arch-v1/index2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Dec 2024 06:01:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <!-- ================== Basics =================== -->
+  <title>Home page 2</title>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- ================== Font =================== -->
+  <link rel="stylesheet" type="text/css" href=" {% static 'font/font-awesome/css/font-awesome.min.css' %} ">
+  <link rel="stylesheet" type="text/css" href=" {% static 'font/mdi-font/css/material-design-iconic-font.min.css' %} ">
+  <!-- ================== Vendor CSS =================== -->
+  <link rel="stylesheet" type="text/css" href=" {% static 'vendor/bootstrap4/bootstrap.min.css' %} ">
+  <link rel="stylesheet" type="text/css" href=" {% static 'vendor/owl-carousel/animate.css' %} ">
+  <link rel="stylesheet" type="text/css" href=" {% static 'vendor/owl-carousel/owl.carousel.min.css' %} ">
+  <link rel="stylesheet" type="text/css" href=" {% static 'vendor/owl-carousel/owl.theme.default.min.css' %} ">
+  <link rel="stylesheet" type="text/css" href=" {% static 'vendor/revolution/settings.css' %} ">
+  <link rel="stylesheet" type="text/css" href=" {% static 'vendor/revolution/navigation.css' %} ">
+  <link rel="stylesheet" type="text/css" href=" {% static 'vendor/revolution/layers.css' %} ">
+  <!-- Main CSS -->
+  <link rel="stylesheet" type="text/css" href=" {% static 'css/font.css' %} ">
+  <link rel="stylesheet" type="text/css" href=" {% static 'css/style.css' %} ">
+
+</head>
+
+<body>
+  <!-- Page Loader -->
+  <div id="page-loader">
+    <div class="page-loader__inner">
+      <div class="page-loader__spin"></div>
+    </div>
+  </div>
+  <!-- End Page Loader -->
+  <!-- Page Wrap -->
+  <div class="page-wrap">
+    <!-- Header Stick -->
+    <header class="header-stick header-stick--dark">
+      <div class="container clearfix">
+        <h1 class="logo pull-left">
+          <a href="/">
+            <img alt="Logo" src=" {% static 'img/logo-white.png' %} ">
+          </a>
+        </h1>
+        <nav class="menu-desktop pull-right">
+          <ul class="ul--inline ul--no-style">
+            <li class="li-has-sub">
+              <a href="/">
+                Home
+              </a>
+            </li>
+            <li class="li-has-sub">
+              <a href="/about">
+                About
+              </a>
+            </li>
+            <li class="li-has-sub">
+              <a href="/contact">
+                Contact
+              </a>
+            </li>
+
+            {%if request.session.log_id%}
+            {%if is_designer%}
+            <li>
+                <a href="/adddesign">Add Design</a>
+            </li>
+
+            <li>
+                <a href="/showrequirements">Requirements</a>
+            </li>
+
+            <li>
+                <a href="/designer_bids">My Bids</a>
+            </li>
+             <li>
+                <a href="/complaint_submit">Complaint</a>
+            </li>
+            {%else%}
+            <li>
+                <a href="/addrequirements">Add Requirements</a>
+            </li>
+            <li>
+                <a href="/showdesigners">Designers</a>
+            </li>
+            <li>
+                <a href="/myrequirements">My Bids</a>
+            </li>
+            <li>
+                <a href="/showfeedback">Feedback</a>
+            </li>
+            <li>
+                <a href="/complaint_submit">Complaint</a>
+            </li>
+            {%endif%}
+            {%endif%}
+
+            {%if request.session.log_id%}
+            {%if is_designer%}
+            {% if profile != None %}
+            <li>
+                <a href="/showdesigner">Profile</a>
+            </li>
+            {%else%}
+            <li>
+                <a href="/add_desingner">Fill Profile</a>
+            </li>
+            {%endif%}
+            {%else%}
+            {% if profile != None %}
+            <li>
+                <a href="/showuser">Profile</a>
+            </li>
+            {%else%}
+            <li>
+                <a href="/adduserdetail">Fill Profile</a>
+            </li>
+            {%endif%}
+            {%endif%}
+            {%endif%}
+
+
+            {%if request.session.log_id%}
+            <li>
+                <a href="/logout">Logout</a>
+            </li>
+            {%else%}
+            <li>
+                <a href="/login">Login</a>
+            </li>
+            <li>
+                <a href="/signup">Register</a>
+            </li>
+            {%endif%}
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header Stick -->
+    <!-- Header Mobile -->
+    <header class="header-mobile">
+      <div class="container clearfix">
+        <h1 class="logo pull-left">
+          <a href=" {% static 'index.html' %} ">
+            <img alt="Logo" src=" {% static 'img/logo-black.png' %} ">
+          </a>
+        </h1>
+        <a class="menu-mobile__button">
+          <i class="fa fa-bars"></i>
+        </a>
+        <nav class="menu-mobile hidden">
+          <ul class="ul--no-style">
+            <li>
+              <i class="fa fa-plus menu-mobile__more"></i>
+              <a href=" {% static 'index.html' %} ">
+                Home
+              </a>
+              <ul class="ul--no-style hidden">
+                <li>
+                  <a href=" {% static 'index.html' %} ">
+                    Home Page 1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index2.html' %} ">
+                    Home Page 2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index3.html' %} ">
+                    Home Page 3
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index4.html' %} ">
+                    Home Page 4
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index5.html' %} ">
+                    Home Page 5
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index6.html' %} ">
+                    Home Page 6
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <i class="fa fa-plus menu-mobile__more"></i>
+              <a href=" {% static 'project-2col-v1.html' %} ">
+                Projects
+              </a>
+              <ul class="ul--no-style hidden">
+                <li>
+                  <a href=" {% static 'project-2col-v1.html' %} ">
+                    Project 2 Column v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-2col-v2.html' %} ">
+                    Project 2 Column v2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-3col-v1.html' %} ">
+                    Project 3 Column v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-3col-v2.html' %} ">
+                    Project 3 Column v2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-4col-v1.html' %} ">
+                    Project 4 Column v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-4col-v2.html' %} ">
+                    Project 4 Column v2
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <i class="fa fa-plus menu-mobile__more"></i>
+              <a href=" {% static 'service-list.html' %} ">
+                Services
+              </a>
+              <ul class="ul--no-style hidden">
+                <li>
+                  <a href=" {% static 'service-list.html' %} ">
+                    Services List
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'service-v1.html' %} ">
+                    Services v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'service-v2.html' %} ">
+                    Services v2
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <i class="fa fa-plus menu-mobile__more"></i>
+              <a href=" {% static 'portfolio-detail-v1.html' %} ">
+                Pages
+              </a>
+              <ul class="ul--no-style hidden">
+                <li>
+                  <a href=" {% static 'portfolio-detail-v1.html' %} ">
+                    Portfolio Detail v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'portfolio-detail-v2.html' %} ">
+                    Portfolio Detail v2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'portfolio-detail-v3.html' %} ">
+                    Portfolio Detail v3
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'about-us.html' %} ">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'testimonial.html' %} ">
+                    Tesimonial
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'our-process.html' %} ">
+                    Our Process
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static '404page.html' %} ">
+                    404 page
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <i class="fa fa-plus menu-mobile__more"></i>
+              <a href=" {% static 'blog-list.html' %} ">
+                Blog
+              </a>
+              <ul class="ul--no-style hidden">
+                <li>
+                  <a href=" {% static 'blog-list.html' %} ">
+                    Blog List
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-detail.html' %} ">
+                    Blog Detail
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-2col.html' %} ">
+                    Blog 2 Column
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-3col.html' %} ">
+                    Blog 3 Column
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-4col.html' %} ">
+                    Blog 4 Column
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <i class="fa fa-plus menu-mobile__more"></i>
+              <a href=" {% static 'product.html' %} ">
+                Shop
+              </a>
+              <ul class="ul--no-style hidden">
+                <li>
+                  <a href=" {% static 'product.html' %} ">
+                    Product
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'single-product.html' %} ">
+                    Product Detail
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'cart.html' %} ">
+                    Cart
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'checkout.html' %} ">
+                    Checkout
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/contact">
+                Contact
+              </a>
+            </li>
+            {%if request.session.log_id%}
+            {%if is_designer%}
+            {% if profile != None %}
+            <li>
+                <a href="/showdesigner">Profile</a>
+            </li>
+            {%else%}
+            <li>
+                <a href="/add_desingner">Fill Profile</a>
+            </li>
+            {%endif%}
+            {%else%}
+            {% if profile != None %}
+            <li>
+                <a href="/showuser">Profile</a>
+            </li>
+            {%else%}
+            <li>
+                <a href="/adduserdetail">Fill Profile</a>
+            </li>
+            {%endif%}
+            {%endif%}
+            {%endif%}
+
+
+            {%if request.session.log_id%}
+            <li>
+                <a href="/logout">Logout</a>
+            </li>
+            {%else%}
+            <li>
+                <a href="/login">Login</a>
+            </li>
+            <li>
+                <a href="/signup">Register</a>
+            </li>
+            {%endif%}
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header Mobile -->
+    <!-- Header Desktop -->
+    <header class="header-desktop header2">
+      <div class="container clearfix">
+        <h1 class="logo pull-left">
+          <a href=" {% static 'index.html' %} ">
+            <img alt="Logo" src=" {% static 'img/logo-white.png' %} ">
+          </a>
+        </h1>
+
+        <div class="header-button pull-right clearfix">
+          <div class="search-button pull-right clearfix">
+            <a class="search-button__btn" href="#" onclick="return false;">
+              <i class="zmdi zmdi-search"></i>
+            </a>
+          </div>
+        </div>
+
+        <nav class="menu-desktop menu-desktop--show pull-right">
+          <ul class="ul--inline ul--no-style">
+            <li class="li-has-sub">
+              <a href="/">
+                Home
+              </a>
+            </li>
+            <li class="li-has-sub">
+              <a href="/about">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="/contact">
+                Contact
+              </a>
+            </li>
+
+
+            {%if request.session.log_id%}
+            {%if is_designer%}
+            <li>
+                <a href="/adddesign">Add Design</a>
+            </li>
+
+            <li>
+                <a href="/showrequirements">Requirements</a>
+            </li>
+
+            <li>
+                <a href="/designer_bids">My Bids</a>
+            </li>
+             <li>
+                <a href="/complaint_submit">Complaint</a>
+            </li>
+            <li>
+                <a href="/booking_by_user">Booking</a>
+            </li>
+
+
+            {%else%}
+            <li>
+                <a href="/addrequirements">Add Requirements</a>
+            </li>
+            <li class="li-has-sub">
+              <a href="/showdesigners">
+                Designers
+              </a>
+              <ul class="sub-menu ul--no-style">
+                <li>
+                  <a href="/showdesigners">
+                    Designers
+                  </a>
+                </li>
+                <li>
+                  <a href="/booking_desinger">
+                    Booking
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+                <a href="/myrequirements">My Bids</a>
+            </li>
+
+            <li>
+                <a href="/showfeedback">Feedback</a>
+            </li>
+            <li>
+                <a href="/complaint_submit">Complaint</a>
+            </li>
+            {%endif%}
+            {%endif%}
+
+
+            {%if request.session.log_id%}
+            {%if is_designer%}
+            {% if profile != None %}
+            <li>
+                <a href="/showdesigner">Profile</a>
+            </li>
+            {%else%}
+            <li>
+                <a href="/add_desingner">Fill Profile</a>
+            </li>
+            {%endif%}
+            {%else%}
+            {% if profile != None %}
+            <li>
+                <a href="/showuser">Profile</a>
+            </li>
+            {%else%}
+            <li>
+                <a href="/adduserdetail">Fill Profile</a>
+            </li>
+            {%endif%}
+            {%endif%}
+            {%endif%}
+
+
+            {%if request.session.log_id%}
+            <li>
+                <a href="/logout">Logout</a>
+            </li>
+            {%else%}
+            <li>
+                <a href="/login">Login</a>
+            </li>
+            <li>
+                <a href="/signup">Register</a>
+            </li>
+            {%endif%}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+      {%block main%}
+
+      {%endblock%}
+
+
+   <!-- Footer -->
+    <footer class="footer-2">
+      <div class="overlay overlay--dark">
+      </div>
+      <div class="parallax parallax--footer">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-9 col-12">
+              <h1>
+                <a href="/">
+                  <img alt="Logo" src=" {% static 'img/logo-white.png' %} ">
+                </a>
+              </h1>
+              <form method="post" class="form-footer">
+                <input type="text" name="name" class="form__input" placeholder="Your Email...">
+                <button type="submit" class="au-btn au-btn--yellow au-btn--white au-btn--submit">Send</button>
+              </form>
+              <ul class="ul--inline ul--footer">
+                <li>
+                  <a href="/">Home</a>
+                </li>
+                <li>
+                  <a href="/about">About</a>
+                </li>
+                <li>
+                  <a href="/contact">Contact</a>
+                </li>
+              </ul>
+              <div class="social">
+                <a href="#" class="social__item social__item--circle">
+                  <i class="zmdi zmdi-facebook"></i>
+                </a>
+                <a href="#" class="social__item social__item--circle">
+                  <i class="zmdi zmdi-dribbble"></i>
+
+                </a>
+                <a href="#" class="social__item social__item--circle">
+                  <i class="zmdi zmdi-google"></i>
+
+                </a>
+                <a href="#" class="social__item social__item--circle">
+                  <i class="zmdi zmdi-twitter"></i>
+
+                </a>
+                <a href="#" class="social__item social__item--circle">
+                  <i class="zmdi zmdi-instagram"></i>
+
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+    <!-- Copyright -->
+    <!-- End Copyright -->
+    <!-- Back to top -->
+    <a href="#" id="btn-to-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+    <!-- End Back to top -->
+  </div>
+  <!-- End Page Wrap -->
+
+  <!-- =================== PLUGIN JS ==================== -->
+  <script src=" {% static 'vendor/jquery-3.2.1.min.js' %} " type="text/javascript"></script>
+  <script src=" {% static 'vendor/wow/wow.min.js' %} " type="text/javascript"></script>
+  <script src=" {% static 'vendor/bootstrap4/popper.min.js' %} " type="text/javascript"></script>
+  <script src=" {% static 'vendor/bootstrap4/bootstrap.min.js' %} " type="text/javascript"></script>
+  <script src=" {% static 'vendor/owl-carousel/owl.carousel.min.js' %} " type="text/javascript"></script>
+  <script src=" {% static 'vendor/revolution/jquery.themepunch.revolution.min.js' %} " type="text/javascript"></script>
+  <script src=" {% static 'vendor/revolution/jquery.themepunch.tools.min.js' %} " type="text/javascript"></script>
+  <!-- Local Revolution -->
+  <!-- <script type="text/javascript" src=" {% static 'vendor/revolution/local/revolution.extension.migration.min.js' %} "></script> -->
+  <script type="text/javascript" src=" {% static 'vendor/revolution/local/revolution.extension.actions.min.js' %} "></script>
+  <script type="text/javascript" src=" {% static 'vendor/revolution/local/revolution.extension.carousel.min.js' %} "></script>
+  <script type="text/javascript" src=" {% static 'vendor/revolution/local/revolution.extension.kenburn.min.js' %} "></script>
+  <script type="text/javascript" src=" {% static 'vendor/revolution/local/revolution.extension.layeranimation.min.js' %} "></script>
+  <script type="text/javascript" src=" {% static 'vendor/revolution/local/revolution.extension.navigation.min.js' %} "></script>
+  <script type="text/javascript" src=" {% static 'vendor/revolution/local/revolution.extension.parallax.min.js' %} "></script>
+  <script type="text/javascript" src=" {% static 'vendor/revolution/local/revolution.extension.slideanims.min.js' %} "></script>
+  <script type="text/javascript" src=" {% static 'vendor/revolution/local/revolution.extension.video.min.js' %} "></script>
+
+
+  <!-- =================== CUSTOM JS ==================== -->
+  <script type="text/javascript" src=" {% static 'js/main.js' %} "></script>
+  <script type="text/javascript" src=" {% static 'js/revo-custom.js' %} "></script>
+  <script type="text/javascript" src=" {% static 'js/wow-custom.js' %} "></script>
+</body>
+
+
+<!-- Mirrored from freebw.com/templates/arch-v1/index2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Dec 2024 06:01:16 GMT -->
+</html>

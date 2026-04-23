@@ -1,0 +1,181 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+<style>
+/* Feedback form container */
+.feedback-form {
+    max-width: 600px;
+    margin: 200px 0px 30px 600px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form heading */
+.feedback-form h4 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Input fields and textarea */
+.feedback-form .form-group {
+    margin-bottom: 20px;
+}
+
+.feedback-form .form-control {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.feedback-form .form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
+}
+
+/* Increase font size for feedback message textarea with higher specificity */
+.feedback-form .form-group textarea.form-control {
+    font-size: 1.5rem !important;  /* Increased font size with higher specificity */
+}
+
+/* Star rating container */
+.feedback-form .rating {
+    font-size: 2rem;
+    color: #f39c12;
+    display: block;
+    text-align: center;
+}
+
+/* Submit button styling */
+.feedback-form .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-form .btn:hover {
+    background-color: #218838;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .feedback-form {
+        padding: 15px;
+    }
+
+    .feedback-form h4 {
+        font-size: 1.5rem;
+    }
+
+    .feedback-form .btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .feedback-form textarea {
+        font-size: 2rem !important;  /* Ensure font size applies on smaller screens */
+    }
+}
+
+    h1.fw-Italic.display-2 {
+    font-family: "Audiowide", sans-serif;
+    font-size: 3.5rem;
+    font-style: italic;
+    font-weight: 400; /* Normal weight, not bold */
+    color: #2c3e50;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+h1.fw-Italic.display-2:hover {
+    transform: scale(1.05);
+}
+
+/* AOS Animation */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+
+
+</style>
+
+
+      <section class="navigation">
+      <div class="parallax parallax--ser-li">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>
+                Complaint
+              </h2>
+              <ul class="breadcrumbs ul--inline ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">Home</a>
+                </li>
+                <span>/</span>
+                <li class="active">
+                  Complaint
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="w3l-form1 py-5">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-8">
+				<div class="card shadow-sm border"><br><br>
+					<div>
+						<h4 align="center">Complaint</h4>
+					</div>
+					<div class="card-body">
+						<form method="post" action="/complaint_submit">
+							{% csrf_token %}
+
+							<div class="form-group mb-3">
+								<label for="subject" class="form-label">Subject</label>
+								<input type="text" name="subject1" id="subject" class="form-control" placeholder="Enter Subject" required>
+							</div>
+
+							<div class="form-group mb-4">
+								<label for="description" class="form-label">Description</label>
+								<textarea name="description1" id="description" class="form-control" rows="5" placeholder="Describe your issue here..." required></textarea>
+							</div>
+
+							<div class="text-center">
+								<button type="submit" class="btn btn-success">Submit Complaint</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+    {%endblock%}

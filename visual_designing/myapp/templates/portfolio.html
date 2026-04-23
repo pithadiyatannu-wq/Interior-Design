@@ -1,0 +1,168 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+ <style>
+        .designer-card img {
+            border-radius: 10px;
+        }
+        .design-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            transition: transform 0.2s;
+        }
+        .design-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    <!-- Navigation -->
+    <section class="navigation">
+      <div class="parallax parallax--ser-li">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>
+                Designers
+              </h2>
+              <ul class="breadcrumbs ul--inline ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">Home</a>
+                </li>
+                <span>/</span>
+                <li class="active">
+                  Designers
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Navigation -->
+    <!-- Service List -->
+
+   <div class="container py-5">
+        <h1 class="text-center mb-5">Designer Portfolio</h1>
+
+        <!-- Designer Profile Section -->
+        <div class="designer-card mb-5">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                    <img src="{{ designer.designerprofile_image.url }}" alt="Designer Image" class="img-fluid" width="200">
+                </div>
+                <div class="col-md-8">
+                    <h3>{{ designer.user.name }}</h3>
+                    <p><strong>Company:</strong> {{ designer.company_name }}</p>
+                    <p><strong>Specialization:</strong> {{ designer.specialization }}</p>
+                    <p><strong>Years of Experience:</strong> {{ designer.years_of_experience }}</p>
+                    <p><strong>Availability:</strong> <span class="badge bg-success">{{ designer.availability }}</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories Section -->
+        <h2 class="mb-4">Categories</h2>
+        <div class="row">
+            {% for category in categories %}
+                <div class="col-md-3">
+                    <div class="card text-center mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ category.name }}</h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Designs Section -->
+        <h2 class="mb-4">Designs</h2>
+        <form method="POST">
+                {% csrf_token %}
+
+                <!-- Services -->
+                <h3>Designs</h3>
+                {% if designs %}
+    <div class="row">
+        {% for design in designs %}
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <figure class="service-image">
+                        <img src="{{ design.image.url }}" alt="{{ design.design_name }}" class="img-fluid">
+                    </figure>
+                    <h5 class="card-title">{{ design.design_name }}</h5>
+                    <p><strong>Cost:</strong> ₹{{ design.design_price }}</p>
+                    <p>{{ design.design_desc }}</p>
+                    <div>
+                        <input type="checkbox" name="designs" value="{{ design.id }}"> Select
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No designs available for this designer.</p>
+{% endif %}
+
+
+
+    <div class="form-group">
+        <label for="payment_mode">Select Payment Mode</label>
+        <select id="payment_mode" name="payment_mode" class="form-control" onchange="togglePaymentFields()">
+            <option value="online">Online Payment</option>
+            <option value="offline">Offline Payment</option>
+        </select>
+    </div>
+
+    <!-- Offline Payment Fields -->
+    <div id="offline_fields" style="display: none;">
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="reference">Reference</label>
+            <input type="text" id="reference" name="reference" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="remark">Remark</label>
+            <textarea id="remark" name="remark" class="form-control"></textarea>
+        </div>
+    </div>
+
+     <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Pay Now</button>
+    </div>
+</form>
+
+       <script>
+    function togglePaymentFields() {
+        const paymentMode = document.getElementById('payment_mode').value;
+        const offlineFields = document.getElementById('offline_fields');
+        offlineFields.style.display = (paymentMode === 'offline') ? 'block' : 'none';
+    }
+</script>
+
+            {% if razorpay_payment %}
+                <form method="POST" action="{% url 'pay_status' %}" class="mt-4">
+                    {% csrf_token %}
+                    <script
+                        src="https://checkout.razorpay.com/v1/checkout.js"
+                        data-key="{{ razorpay_payment.key }}"
+                        data-amount="{{ razorpay_payment.amount }}"
+                        data-currency="INR"
+                        data-order_id="{{ razorpay_payment.order_id }}"
+                        data-buttontext="Pay with Razorpay"
+                        data-name="Gardening Services"
+                        data-description="Complete your payment"
+                        data-theme.color="#F37254"
+                    ></script>
+                    <input type="hidden" name="hidden" />
+                </form>
+            {% endif %}
+    </div>
+    <!-- End Service List -->
+
+  {%endblock%}

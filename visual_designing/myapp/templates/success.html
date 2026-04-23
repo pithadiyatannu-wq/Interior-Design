@@ -1,0 +1,42 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+    <!-- Navigation -->
+    <section class="navigation">
+      <div class="parallax parallax--nav-3">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>
+                Payment Information
+              </h2>
+              <ul class="breadcrumbs ul--inline ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">Home</a>
+                </li>
+                <span>/</span>
+                <li>
+                  <a href="#">Blogs</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Navigation -->
+    <!-- Blog Grid 1 -->
+<br><br><br>
+
+
+<body>
+<h1 style="text-align: center; margin: 200px; font-size: 50; color: rgb(10, 10, 10)">Payment Successfull</h1>
+
+
+</body>
+
+<br><br><br>
+
+{%endblock%}

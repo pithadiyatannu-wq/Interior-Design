@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+{% block main %}
+{% load static %}
+{%include 'messages.html'%}
+    <!-- Navigation -->
+    <section class="navigation">
+      <div class="parallax parallax--nav-1">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>
+                about us
+              </h2>
+              <ul class="breadcrumbs ul--inline ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">Home</a>
+                </li>
+                <span>/</span>
+                <li>
+                  <a href="#">Pages</a>
+                </li>
+                <span>/</span>
+                <li class="active">
+                  About Us
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Navigation -->
+    <!-- We Are -->
+    <section class="we-are">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-lg-5 col-md-12 col-12">
+            <div class="we-are__left">
+              <div class="top">
+                <div class="we-are__item">
+                  <img alt="We Are 1" src=" {% static 'img/we-are-01.jpg' %} ">
+                </div>
+                <div class="we-are__item">
+                  <img alt="We Are 2" src=" {% static 'img/we-are-02.jpg' %} ">
+                </div>
+              </div>
+              <div class="bottom">
+                <div class="we-are__item">
+                  <img alt="We Are 3" src=" {% static 'img/we-are-03.jpg' %} ">
+                </div>
+                <div class="we-are__item">
+                  <img alt="We Are 4" src=" {% static 'img/we-are-06.jpg' %} ">
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-7 col-md-12 col-12">
+  <div class="we-are__right">
+    <h2>We Are Arch</h2>
+    <h2 class="title--small">Professional Interior Agency</h2>
+
+    <h5>Creating Inspiring Spaces with 25+ Years of Expertise</h5>
+    <p class="m-b-10">
+      Welcome to Arch Interiors, where creativity meets functionality. With over 25 years of experience, we specialize in crafting
+      elegant, personalized interior designs that transform houses into homes and offices into vibrant workspaces.
+    </p>
+    <p>
+      At Arch Interiors, we believe that every space tells a story, and our mission is to make yours unforgettable. From modern minimalism
+      to timeless classics, our dedicated team works closely with you to bring your vision to life. With a keen eye for detail and a passion
+      for perfection, we ensure that every project is a seamless blend of style, comfort, and innovation. Let us create a space you’ll love
+      coming back to every day.
+    </p>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </section>
+    <!-- End we are -->
+    <!-- Our Team 2 -->
+
+<!-- Our Team -->
+
+    <section class="service-list">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5 col-md-6 col-sm-12 col-12">
+            <h2 class="title title-2">
+              our team
+              <span class="under-title-2">
+              </span>
+            </h2>
+            <p class="title-detail m-b-75 title-detail--px-45">
+          Meet our passionate team of designers and professionals, dedicated to transforming your ideas into reality.
+          With a wealth of experience and a commitment to excellence, our team collaborates to create spaces that inspire,
+          uplift, and resonate with your vision.
+          </div>
+        </div>
+
+        <div class="row">
+          {%for i in alldesigner%}
+          <div class="col-lg-4 col-md-6">
+            <div class="service-list__item">
+              <img alt="Service 1" src="{{i.designerprofile_image.url}}" style="height: 400px; width:400px; object-fit: cover;" />
+              <div class="service-list__text">
+                <h5>
+                  <a href="/portfolio_view/{{i.id}}">{{i.user.name}}</a>
+                </h5>
+                <p>
+                  {{i.address}}
+                </p>
+                {%if request.session.log_id%}
+                <a href="/portfolio_view/{{ i.id }}" class="btn btn-success">View Detail</a>
+                {%else%}
+                <a href="/login" class="btn btn-success">View Detail</a>
+                {%endif%}
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+    </section>
+    <!-- End Our Team 2 -->
+    <!-- Testi-Partner -->
+
+
+    <section class="service-2">
+      <div class="container clearfix">
+        <div class="service-2-wrap clearfix">
+          <div class="service-2__left wow fadeInLeft" data-wow-duration="1s">
+            <div class="service-2__img">
+              <h2 class="title title-2--special title-small" id="our1">
+                Our
+              </h2>
+              <h2 class="title title-2--special title-small" id="our2">
+                Services
+              </h2>
+              <img alt="Service thumb" src=" {% static 'img/service-page2.jpg' %} ">
+            </div>
+          </div>
+          <div class="service-2__right">
+            <div class="service-2__inner-head wow fadeInDown" data-wow-duration="1s" data-wow-delay=".5s">
+              <h3>
+                arch is your best solution
+              </h3>
+              <p>
+                 We specialize in creating spaces that are not only aesthetically pleasing but also functional and tailored
+            to your needs. With a deep understanding of design principles and a commitment to quality, we transform
+            your vision into reality, ensuring every detail is executed to perfection.
+              </p>
+            </div>
+            <div class="service-2__inner-body wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+              <div class="box-item body__item clearfix">
+                <div class="box-head box-head--border">
+                  <img alt="Icon 1" src=" {% static 'img/icon/icon-service-04.png' %} ">
+                </div>
+                <div class="box-body">
+                  <h5>
+                    <a href=" {% static 'service-list.html' %} ">agency interior</a>
+                  </h5>
+                  <p>
+                Tailored interior designs that enhance the functionality and aesthetic of your business spaces.
+                  </p>
+                </div>
+              </div>
+              <div class="box-item body__item clearfix">
+                <div class="box-head box-head--border">
+                  <img alt="Icon 2" src=" {% static 'img/icon/icon-service-05.png' %} ">
+                </div>
+                <div class="box-body">
+                  <h5>
+                    <a href=" {% static 'service-list.html' %} ">ecommerce interior</a>
+                  </h5>
+                  <p>
+                Innovative designs that make your e-commerce spaces welcoming, modern, and customer-centric.
+                  </p>
+                </div>
+              </div>
+              <div class="box-item body__item clearfix">
+                <div class="box-head box-head--border">
+                  <img alt="Icon 3" src=" {% static 'img/icon/icon-service-06.png' %} ">
+                </div>
+                <div class="box-body">
+                  <h5>
+                    <a href=" {% static 'service-list.html' %} ">residential interior</a>
+                  </h5>
+                  <p>
+                Elegant and functional interiors that turn your house into a warm and stylish home.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End Testi-Partner -->
+  {%endblock%}

@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from freebw.com/templates/arch-v1/blog-detail.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Dec 2024 06:03:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <!-- ================== Basics =================== -->
+  <title>Blog List</title>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" type="text/css" href=" {% static 'font/mdi-font/css/material-design-iconic-font.min.css' %} ">
+  <!-- ================== Font =================== -->
+  <link rel="stylesheet" type="text/css" href=" {% static 'font/font-awesome/css/font-awesome.min.css' %} ">
+  <link rel="stylesheet" type="text/css" href=" {% static 'font/mdi-font/css/material-design-iconic-font.min.css' %} ">
+  <!-- ================== Vendor CSS =================== -->
+  <link rel="stylesheet" type="text/css" href=" {% static 'vendor/bootstrap4/bootstrap.min.css' %} ">
+  <link rel="stylesheet" type="text/css" href=" {% static 'vendor/owl-carousel/animate.css' %} ">
+  <link rel="stylesheet" type="text/css" href=" {% static 'vendor/owl-carousel/owl.carousel.min.css' %} ">
+  <link rel="stylesheet" type="text/css" href=" {% static 'vendor/owl-carousel/owl.theme.default.min.css' %} ">
+  <!-- Main CSS -->
+  <link rel="stylesheet" type="text/css" href=" {% static 'css/font.css' %} ">
+  <link rel="stylesheet" type="text/css" href=" {% static 'css/style.css' %} ">
+</head>
+
+<body>
+  <!-- Page Loader -->
+  <div id="page-loader">
+    <div class="page-loader__inner">
+        <div class="page-loader__spin"></div>
+    </div>
+  </div>
+  <!-- End Page Loader -->
+  <!-- Page Wrap -->
+  <div class="page-wrap">
+    <!-- Header Stick -->
+    <header class="header-stick">
+      <div class="container clearfix">
+        <h1 class="logo pull-left">
+          <a href=" {% static 'index.html' %} ">
+            <img alt="Logo" src=" {% static 'img/logo-black.png' %} ">
+          </a>
+        </h1>
+        <nav class="menu-desktop pull-right">
+          <ul class="ul--inline ul--no-style">
+            <li class="li-has-sub">
+              <a href=" {% static 'index.html' %} ">
+                Home
+              </a>
+              <ul class="sub-menu ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">
+                    Home Page 1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index2.html' %} ">
+                    Home Page 2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index3.html' %} ">
+                    Home Page 3
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index4.html' %} ">
+                    Home Page 4
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index5.html' %} ">
+                    Home Page 5
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index6.html' %} ">
+                    Home Page 6
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="li-has-sub">
+              <a href=" {% static 'project-2col-v1.html' %} ">
+                Projects
+              </a>
+              <ul class="sub-menu ul--no-style">
+                <li>
+                  <a href=" {% static 'project-2col-v1.html' %} ">
+                    Project 2 Column v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-2col-v2.html' %} ">
+                    Project 2 Column v2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-3col-v1.html' %} ">
+                    Project 3 Column v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-3col-v2.html' %} ">
+                    Project 3 Column v2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-4col-v1.html' %} ">
+                    Project 4 Column v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-4col-v2.html' %} ">
+                    Project 4 Column v2
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="li-has-sub">
+              <a href=" {% static 'service-list.html' %} ">
+                Services
+              </a>
+              <ul class="sub-menu ul--no-style">
+                <li>
+                  <a href=" {% static 'service-list.html' %} ">
+                    Services List
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'service-v1.html' %} ">
+                    Services v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'service-v2.html' %} ">
+                    Services v2
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="li-has-sub">
+              <a href="#">
+                Pages
+              </a>
+              <ul class="sub-menu ul--no-style">
+                <li>
+                  <a href=" {% static 'portfolio-detail-v1.html' %} ">
+                    Portfolio Detail v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'portfolio-detail-v2.html' %} ">
+                    Portfolio Detail v2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'portfolio-detail-v3.html' %} ">
+                    Portfolio Detail v3
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'about-us.html' %} ">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'testimonial.html' %} ">
+                    Tesimonial
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'our-process.html' %} ">
+                    Our Process
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static '404page.html' %} ">
+                    404 page
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="li-has-sub">
+              <a href=" {% static 'blog-list.html' %} ">
+                Blog
+              </a>
+              <ul class="sub-menu ul--no-style">
+                <li>
+                  <a href=" {% static 'blog-list.html' %} ">
+                    Blog List
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-detail.html' %} ">
+                    Blog Detail
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-2col.html' %} ">
+                    Blog 2 Column
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-3col.html' %} ">
+                    Blog 3 Column
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-4col.html' %} ">
+                    Blog 4 Column
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="li-has-sub">
+              <a href=" {% static 'product.html' %} ">
+                Shop
+              </a>
+              <ul class="sub-menu ul--no-style">
+                <li>
+                  <a href=" {% static 'product.html' %} ">
+                    Product
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'single-product.html' %} ">
+                    Product Detail
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'cart.html' %} ">
+                    Cart
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'checkout.html' %} ">
+                    Checkout
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href=" {% static 'contact.html' %} ">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header Stick -->
+    <!-- Header Desktop -->
+    <header class="header-desktop header1">
+      <div class="container clearfix">
+        <h1 class="logo pull-left">
+          <a href=" {% static 'index.html' %} ">
+            <img alt="logo" src=" {% static 'img/logo-black.png' %} ">
+          </a>
+        </h1>
+
+        <div class="header-button pull-right clearfix">
+          <div class="canvas-menu-button pull-right">
+            <a href="#" onclick="return false;">
+              <i class="zmdi zmdi-menu"></i>
+            </a>
+          </div>
+          <div class="mini-cart pull-right">
+            <a href="#" id="cart-button" onclick="return false;">
+              <i class="zmdi zmdi-case"></i>
+              <span class="mini-cart-counter">2</span>
+            </a>
+            <div class="cart-dropdown cart-dropdown--hidden">
+              <ul class="cart-list ul--no-style">
+                <li>
+                  <div class="cart__item">
+                    <div class="img-thumb">
+                      <img alt="Hand Made Chair" src=" {% static 'img/cart-item-01.jpg' %} ">
+                      <span class="mini-cart-counter mini-cart-counter--gray">
+                        1
+                      </span>
+                    </div>
+                    <div class="pro-detail">
+                      <h6>
+                        <a href=" {% static 'single-product.html' %} ">
+                          Handmade Wood Chair
+                        </a>
+                      </h6>
+                      <p>
+                        <em>
+                          Price : $ 2,65
+                        </em>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="cart__item">
+                    <div class="img-thumb">
+                      <img alt="Basket Chair" src=" {% static 'img/cart-item-02.jpg' %} ">
+                      <span class="mini-cart-counter mini-cart-counter--gray">
+                        2
+                      </span>
+                    </div>
+                    <div class="pro-detail">
+                      <h6>
+
+                        <a href=" {% static 'single-product.html' %} ">
+                          Basket Chair
+                        </a>
+                      </h6>
+                      <p>
+                        <em>
+                          Price : $ 4.15
+                        </em>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="total-checkout">
+                <p class="total">
+                  Subtotal :
+                  <span class="sum">
+                    $10,95
+                  </span>
+                </p>
+                <div class="checkout">
+                  <a href=" {% static 'cart.html' %} " class="au-btn au-btn--small au-btn--pill au-btn--border au-btn--gray m-r-15">My cart</a>
+                  <a href=" {% static 'checkout.html' %} " class="au-btn au-btn--small au-btn--pill au-btn--border au-btn--gray">Checkout</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="search-button pull-right clearfix">
+            <a class="search-button__btn" href="#" onclick="return false;">
+              <i class="zmdi zmdi-search"></i>
+            </a>
+            <form class="form form-header pull-left" role="form">
+              <input type="text" id="header-input" class="form__input form__input--hidden" placeholder="Search here...">
+            </form>
+          </div>
+        </div>
+        <nav class="menu-desktop menu-desktop--show pull-right">
+          <ul class="ul--inline ul--no-style">
+            <li class="li-has-sub">
+              <a href=" {% static 'index.html' %} ">
+                Home
+              </a>
+              <ul class="sub-menu ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">
+                    Home Page 1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index2.html' %} ">
+                    Home Page 2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index3.html' %} ">
+                    Home Page 3
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index4.html' %} ">
+                    Home Page 4
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index5.html' %} ">
+                    Home Page 5
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index6.html' %} ">
+                    Home Page 6
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="li-has-sub">
+              <a href=" {% static 'project-2col-v1.html' %} ">
+                Projects
+              </a>
+              <ul class="sub-menu ul--no-style">
+                <li>
+                  <a href=" {% static 'project-2col-v1.html' %} ">
+                    Project 2 Column v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-2col-v2.html' %} ">
+                    Project 2 Column v2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-3col-v1.html' %} ">
+                    Project 3 Column v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-3col-v2.html' %} ">
+                    Project 3 Column v2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-4col-v1.html' %} ">
+                    Project 4 Column v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-4col-v2.html' %} ">
+                    Project 4 Column v2
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="li-has-sub">
+              <a href=" {% static 'service-list.html' %} ">
+                Services
+              </a>
+              <ul class="sub-menu ul--no-style">
+                <li>
+                  <a href=" {% static 'service-list.html' %} ">
+                    Services List
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'service-v1.html' %} ">
+                    Services v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'service-v2.html' %} ">
+                    Services v2
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="li-has-sub">
+              <a href="#">
+                Pages
+              </a>
+              <ul class="sub-menu ul--no-style">
+                <li>
+                  <a href=" {% static 'portfolio-detail-v1.html' %} ">
+                    Portfolio Detail v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'portfolio-detail-v2.html' %} ">
+                    Portfolio Detail v2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'portfolio-detail-v3.html' %} ">
+                    Portfolio Detail v3
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'about-us.html' %} ">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'testimonial.html' %} ">
+                    Tesimonial
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'our-process.html' %} ">
+                    Our Process
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static '404page.html' %} ">
+                    404 page
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="li-has-sub">
+              <a href=" {% static 'blog-list.html' %} ">
+                Blog
+              </a>
+              <ul class="sub-menu ul--no-style">
+                <li>
+                  <a href=" {% static 'blog-list.html' %} ">
+                    Blog List
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-detail.html' %} ">
+                    Blog Detail
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-2col.html' %} ">
+                    Blog 2 Column
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-3col.html' %} ">
+                    Blog 3 Column
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-4col.html' %} ">
+                    Blog 4 Column
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="li-has-sub">
+              <a href=" {% static 'product.html' %} ">
+                Shop
+              </a>
+              <ul class="sub-menu ul--no-style">
+                <li>
+                  <a href=" {% static 'product.html' %} ">
+                    Product
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'single-product.html' %} ">
+                    Product Detail
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'cart.html' %} ">
+                    Cart
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'checkout.html' %} ">
+                    Checkout
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href=" {% static 'contact.html' %} ">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header Desktop -->
+    <!-- Menu Canvas -->
+    <div id="menu-canvas" class="menu-canvas--hidden">
+      <div class="menu-canvas__inner">
+        <div class="close-menu-canvas">
+          <i class="zmdi zmdi-close" id="btn-close"></i>
+        </div>
+        <h1 class="logo">
+          <a href=" {% static 'index.html' %} ">
+            <img alt="Logo" src=" {% static 'img/logo-white.png' %} ">
+          </a>
+        </h1>
+
+        <div class="menu-canvas-slide">
+          <div class="menu-canvas__image">
+            <div id="sync1" class="owl-carousel owl-theme">
+              <div class="item">
+                <img alt="Project 1" src=" {% static 'img/item-menu-canvas-01.jpg' %} ">
+              </div>
+              <div class="item">
+                <img alt="Project 2" src=" {% static 'img/item-menu-canvas-02.jpg' %} ">
+              </div>
+            </div>
+          </div>
+
+          <div id="sync2" class="owl-carousel owl-theme">
+            <p class="item menu-canvas__detail">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque la udantium
+            </p>
+            <p class="item menu-canvas__detail">
+              Loren son perspiciatis unde omgi iste natus error sit voluptmen accusantium doloremque la udantium
+            </p>
+          </div>
+
+        </div>
+        <div class="social">
+          <a href="#" class="social__item">
+            <i class="zmdi zmdi-facebook"></i>
+          </a>
+          <a href="#" class="social__item">
+            <i class="zmdi zmdi-dribbble"></i>
+          </a>
+          <a href="#" class="social__item">
+            <i class="zmdi zmdi-google"></i>
+          </a>
+          <a href="#" class="social__item">
+            <i class="zmdi zmdi-twitter"></i>
+          </a>
+          <a href="#" class="social__item">
+            <i class="zmdi zmdi-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- End Menu Canvas -->
+    <!-- Header Mobile -->
+    <header class="header-mobile">
+      <div class="container clearfix">
+        <h1 class="logo pull-left">
+          <a href=" {% static 'index.html' %} ">
+            <img alt="Logo" src=" {% static 'img/logo-black.png' %} ">
+          </a>
+        </h1>
+        <a class="menu-mobile__button">
+          <i class="fa fa-bars"></i>
+        </a>
+        <nav class="menu-mobile hidden">
+          <ul class="ul--no-style">
+            <li>
+              <i class="fa fa-plus menu-mobile__more"></i>
+              <a href=" {% static 'index.html' %} ">
+                Home
+              </a>
+              <ul class="ul--no-style hidden">
+                <li>
+                  <a href=" {% static 'index.html' %} ">
+                    Home Page 1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index2.html' %} ">
+                    Home Page 2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index3.html' %} ">
+                    Home Page 3
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index4.html' %} ">
+                    Home Page 4
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index5.html' %} ">
+                    Home Page 5
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'index6.html' %} ">
+                    Home Page 6
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <i class="fa fa-plus menu-mobile__more"></i>
+              <a href=" {% static 'project-2col-v1.html' %} ">
+                Projects
+              </a>
+              <ul class="ul--no-style hidden">
+                <li>
+                  <a href=" {% static 'project-2col-v1.html' %} ">
+                    Project 2 Column v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-2col-v2.html' %} ">
+                    Project 2 Column v2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-3col-v1.html' %} ">
+                    Project 3 Column v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-3col-v2.html' %} ">
+                    Project 3 Column v2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-4col-v1.html' %} ">
+                    Project 4 Column v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'project-4col-v2.html' %} ">
+                    Project 4 Column v2
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <i class="fa fa-plus menu-mobile__more"></i>
+              <a href=" {% static 'service-list.html' %} ">
+                Services
+              </a>
+              <ul class="ul--no-style hidden">
+                <li>
+                  <a href=" {% static 'service-list.html' %} ">
+                    Services List
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'service-v1.html' %} ">
+                    Services v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'service-v2.html' %} ">
+                    Services v2
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <i class="fa fa-plus menu-mobile__more"></i>
+              <a href=" {% static 'portfolio-detail-v1.html' %} ">
+                Pages
+              </a>
+              <ul class="ul--no-style hidden">
+                <li>
+                  <a href=" {% static 'portfolio-detail-v1.html' %} ">
+                    Portfolio Detail v1
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'portfolio-detail-v2.html' %} ">
+                    Portfolio Detail v2
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'portfolio-detail-v3.html' %} ">
+                    Portfolio Detail v3
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'about-us.html' %} ">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'testimonial.html' %} ">
+                    Tesimonial
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'our-process.html' %} ">
+                    Our Process
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static '404page.html' %} ">
+                    404 page
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <i class="fa fa-plus menu-mobile__more"></i>
+              <a href=" {% static 'blog-list.html' %} ">
+                Blog
+              </a>
+              <ul class="ul--no-style hidden">
+                <li>
+                  <a href=" {% static 'blog-list.html' %} ">
+                    Blog List
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-detail.html' %} ">
+                    Blog Detail
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-2col.html' %} ">
+                    Blog 2 Column
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-3col.html' %} ">
+                    Blog 3 Column
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-4col.html' %} ">
+                    Blog 4 Column
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <i class="fa fa-plus menu-mobile__more"></i>
+              <a href=" {% static 'product.html' %} ">
+                Shop
+              </a>
+              <ul class="ul--no-style hidden">
+                <li>
+                  <a href=" {% static 'product.html' %} ">
+                    Product
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'single-product.html' %} ">
+                    Product Detail
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'cart.html' %} ">
+                    Cart
+                  </a>
+                </li>
+                <li>
+                  <a href=" {% static 'checkout.html' %} ">
+                    Checkout
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href=" {% static 'contact.html' %} ">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header Mobile -->
+    <!-- Navigation -->
+    <section class="navigation">
+      <div class="parallax parallax--nav-3">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>
+                blog detail
+              </h2>
+              <ul class="breadcrumbs ul--inline ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">Home</a>
+                </li>
+                <span>/</span>
+                <li>
+                  <a href="#">Blogs</a>
+                </li>
+                <span>/</span>
+                <li class="active">
+                  Blog Detail
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Navigation -->
+    <!-- Blog Detail -->
+    <section class="blog-detail">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-7">
+            <div class="blog-thumb">
+              <img alt="Blog 1" src=" {% static 'img/blog-11.jpg' %} ">
+            </div>
+            <h4 class="blog-title">
+              Minimalist style 2017
+            </h4>
+            <p class="blog-meta">
+              <em class="author">By AThony Lee</em>
+              <em class="cate">Design Knowledge</em>
+              <em class="time">Dec 30,2017</em>
+            </p>
+            <div class="blog-content">
+              <p class="m-t-20">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaquemt
+                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                voluptatem quia volupta sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                voluptatem sequi nesciunt. Neque porro alt quisquam est, qui dolorem ipsum quia dolor .
+              </p>
+              <blockquote class="blog-quote">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate .
+              </blockquote>
+              <p class="m-b-20">
+                Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi mather
+                consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+                vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
+              </p>
+              <p>
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
+                quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa
+                qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
+                expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
+                id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+              </p>
+            </div>
+            <div class="blog-footer">
+              <div class="container clearfix">
+                <div class="tags pull-left m-l-20">
+                  <span>Tags: </span>
+                  <a href="#">Art Deco</a>,
+                  <a href="#">Minimalist Style</a>
+                </div>
+                <div class="share pull-right">
+                  <a href="#">
+                    <i class="zmdi zmdi-facebook"></i>
+                  </a>
+                  <a href="#">
+                    <i class="zmdi zmdi-dribbble"></i>
+                  </a>
+                  <a href="#">
+                    <i class="zmdi zmdi-google"></i>
+                  </a>
+                  <a href="#">
+                    <i class="zmdi zmdi-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="cmt-area">
+              <h4 class="cmt-title">
+                2 Comments
+              </h4>
+              <ul class="cmt-list ul--no-style">
+                <li class="clearfix">
+                  <div class="user-img pull-left">
+                    <img alt="User 1" src=" {% static 'img/testi-01.jpg' %} ">
+                  </div>
+                  <div class="cmt-right">
+                    <h5>
+                      Anthony Lee
+                    </h5>
+                    <div class="cmt-date">
+                      <em>
+                        Nov 24, 2017
+                      </em>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure at nulla pariatur.
+                    </p>
+                    <div class="cmt-reply">
+                      <a href="#">
+                        Reply
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="children clearfix">
+                  <div class="user-img pull-left">
+                    <img alt="User 2" src=" {% static 'img/testi-03.jpg' %} ">
+                  </div>
+                  <div class="cmt-right">
+                    <h5>
+                      Mike Song
+                    </h5>
+                    <div class="cmt-date">
+                      <em>
+                        Nov 25, 2017
+                      </em>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure at nulla pariatur.
+                    </p>
+                    <div class="cmt-reply">
+                      <a href="#">
+                        Reply
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="clearfix">
+                  <div class="user-img pull-left">
+                    <img alt="User 3" src=" {% static 'img/testi-04.jpg' %} ">
+                  </div>
+                  <div class="cmt-right">
+                    <h5>
+                      Bill Tuner
+                    </h5>
+                    <div class="cmt-date">
+                      <em>
+                        Nov 28, 2017
+                      </em>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure at nulla pariatur.
+                    </p>
+                    <div class="cmt-reply">
+                      <a href="#">
+                        Reply
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="cmt-leave">
+              <h4 class="cmt-title">Leave a comment</h4>
+              <form action="#" method="post">
+                <textarea placeholder="Text here..."></textarea>
+                <div class="row">
+                  <div class="col-md-6">
+                    <input type="text" name="name" placeholder="Your name">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="email" name="email" placeholder="Your Email">
+                  </div>
+                </div>
+                <div class="send-cmt">
+                  <button type="submit" class="au-btn au-btn--yellow au-btn--pill au-btn--big">
+                    Send Comment
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-5">
+            <div class="blog-sidebar">
+              <div class="blog__search">
+                <form action="#" method="get" role="search" class="search-form">
+                  <input type="text" name="search" placeholder="Search here...">
+                  <button type="submit">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </form>
+              </div>
+              <div class="blog__about">
+                <h4 class="title-sidebar">
+                  about
+                </h4>
+                <p>
+                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia quuntur magni dolores eos qui ratione
+                  whattan lolipopz voluptatem sequi nesciunt. Neque porro ququam est, qui dolorem ipsum quia dolor sit amet,
+                  cotransectetur, adipisci velit, sed quia non nulock mquam eius modi tempora incidunt ut
+                </p>
+              </div>
+              <div class="blog__recent">
+                <h4 class="title-sidebar">
+                  Recent Post
+                </h4>
+                <div class="blog__recent-item clearfix">
+                  <div class="img pull-left">
+                    <a href="#">
+                      <img alt="Blog Thumb 1" src=" {% static 'img/blog-item-01.jpg' %} ">
+                    </a>
+                  </div>
+                  <div class="text">
+                    <h6>
+                      <a href="#">
+                        details are the key of interior
+                      </a>
+                    </h6>
+                    <p>
+                      <em>November , 24 , 2017</em>
+                    </p>
+                  </div>
+                </div>
+                <!-- End Blog recent item -->
+                <div class="blog__recent-item clearfix">
+                  <div class="img pull-left">
+                    <a href="#">
+                      <img alt="Blog Thumb 2" src=" {% static 'img/blog-item-02.jpg' %} ">
+                    </a>
+                  </div>
+                  <div class="text">
+                    <h6>
+                      <a href="#">
+                        morden interior and human ability
+                      </a>
+                    </h6>
+                    <p>
+                      <em>November , 15 , 2017</em>
+                    </p>
+                  </div>
+                </div>
+                <!-- End Blog recent item -->
+                <div class="blog__recent-item clearfix">
+                  <div class="img pull-left">
+                    <a href="#">
+                      <img alt="Blog Thumb 3" src=" {% static 'img/blog-item-03.jpg' %} ">
+                    </a>
+                  </div>
+                  <div class="text">
+                    <h6>
+                      <a href="#">
+                        5 things you need to fix your room
+                      </a>
+                    </h6>
+                    <p>
+                      <em>November , 24 , 2017</em>
+                    </p>
+                  </div>
+                </div>
+                <!-- End Blog recent item -->
+              </div>
+              <ul class="blog__cate ul--no-style">
+                <h4 class="title-sidebar">
+                  category
+                </h4>
+                <li>
+                  <a href="#">
+                    Design Knowledge
+                    <span>
+                      <em>(25 posts)</em>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Tricks and Tips
+                    <span>
+                      <em>(12 posts)</em>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Interior Experiences
+                    <span>
+                      <em>(21 posts)</em>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Q&A
+                    <span>
+                      <em>(09 posts)</em>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="blog__tag-wrap">
+                <h4 class="title-sidebar">
+                  tags
+                </h4>
+                <div class="blog__tag">
+                  <a href="#">
+                    Art deco
+                  </a>
+                  <a href="#">
+                    Architecture
+                  </a>
+                  <a href="#">
+                    ARC
+                  </a>
+                  <a href="#">
+                    Famous Building 2017
+                  </a>
+                  <a href="#">
+                    Au Creative
+                  </a>
+                  <a href="#">
+                    Resort
+                  </a>
+                  <a href="#">
+                    Minimalist style
+                  </a>
+                  <a href="#">
+                    MH
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Blog Detail -->
+    <!-- Footer -->
+    <footer class="footer-2">
+      <div class="overlay overlay--dark">
+      </div>
+      <div class="parallax parallax--footer">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-9 col-12">
+              <h1>
+                <a href="#">
+                  <img alt="Logo" src=" {% static 'img/logo-white.png' %} ">
+                </a>
+              </h1>
+              <form method="post" class="form-footer">
+                <input type="text" name="name" class="form__input" placeholder="Your Email...">
+                <button type="submit" class="au-btn au-btn--yellow au-btn--white au-btn--submit">Send</button>
+              </form>
+              <ul class="ul--inline ul--footer">
+                <li>
+                  <a href=" {% static 'service-list.html' %} ">Service</a>
+                </li>
+                <li>
+                  <a href=" {% static 'product.html' %} ">Product</a>
+                </li>
+                <li>
+                  <a href=" {% static 'portfolio-detail-v1.html' %} ">Gallery</a>
+                </li>
+                <li>
+                  <a href=" {% static 'blog-list.html' %} ">Blog</a>
+                </li>
+                <li>
+                  <a href=" {% static 'contact.html' %} ">Contact</a>
+                </li>
+              </ul>
+              <div class="social">
+                <a href="#" class="social__item social__item--circle">
+                  <i class="zmdi zmdi-facebook"></i>
+                </a>
+                <a href="#" class="social__item social__item--circle">
+                  <i class="zmdi zmdi-dribbble"></i>
+
+                </a>
+                <a href="#" class="social__item social__item--circle">
+                  <i class="zmdi zmdi-google"></i>
+
+                </a>
+                <a href="#" class="social__item social__item--circle">
+                  <i class="zmdi zmdi-twitter"></i>
+
+                </a>
+                <a href="#" class="social__item social__item--circle">
+                  <i class="zmdi zmdi-instagram"></i>
+
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+    <!-- Copyright -->
+    <section class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            Copyright © 2017 Designer by
+            <span>Authemes</span> . All rights reserved
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Copyright -->
+    <!-- Back to top -->
+    <a href="#" id="btn-to-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+    <!-- End Back to top -->
+  </div>
+  <!-- End Page Wrap -->
+
+
+
+
+
+  <!-- =================== PLUGIN JS ==================== -->
+  <script src=" {% static 'vendor/jquery-3.2.1.min.js' %} " type="text/javascript"></script>
+  <script src=" {% static 'vendor/jquery-migrate-3.0.0.min.js' %} " type="text/javascript"></script>
+  <script src=" {% static 'vendor/wow/wow.min.js' %} " type="text/javascript"></script>
+  <script src=" {% static 'vendor/bootstrap4/popper.min.js' %} " type="text/javascript"></script>
+  <script src=" {% static 'vendor/bootstrap4/bootstrap.min.js' %} " type="text/javascript"></script>
+  <script src=" {% static 'vendor/owl-carousel/owl.carousel.min.js' %} " type="text/javascript"></script>
+
+  <!-- =================== CUSTOM JS ==================== -->
+  <script type="text/javascript" src=" {% static 'js/main.js' %} "></script>
+</body>
+
+
+<!-- Mirrored from freebw.com/templates/arch-v1/blog-detail.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Dec 2024 06:03:10 GMT -->
+</html>

@@ -1,0 +1,168 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+<style>
+
+h1.fw-Italic.display-2 {
+    font-family: "Audiowide", sans-serif;
+    font-size: 3.5rem;
+    font-style: italic;
+    font-weight: 400; /* Normal weight, not bold */
+    color: #2c3e50;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+h1.fw-Italic.display-2:hover {
+    transform: scale(1.05);
+}
+
+/* AOS Animation */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Main Container Styling */
+.section.profile-section {
+    padding: 40px 0;
+}
+
+.profile-section .container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Section Styling */
+.profile-section .profile-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Styling */
+.profile-section .content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.profile-section .content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.profile-section .content .price .new {
+    font-size: 1.2rem;
+    color: #555;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.profile-section .shop-list-btn {
+    margin-top: 20px;
+}
+
+.profile-section .shop-list-btn .btn {
+    background-color: #3498db;
+    border-color: #3498db;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-section .shop-list-btn .btn:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .profile-section .content {
+        text-align: center;
+    }
+
+    .profile-section .profile-image img {
+        margin-bottom: 20px;
+    }
+
+    .profile-section .content h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-section .content .price .new {
+        font-size: 1rem;
+    }
+}
+
+</style>
+
+      <section class="navigation">
+      <div class="parallax parallax--nav-1">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>
+                Designer Profile
+              </h2>
+              <ul class="breadcrumbs ul--inline ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">Home</a>
+                </li>
+                <span>/</span>
+                <li class="active">
+                  Designer Profile
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<!---728x90--->
+<div class="section profile-section section-margin">
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <!-- Profile Image on Left -->
+            <div class="col-md-4 col-sm-12">
+                <div class="profile-image">
+                    <img src="{{ sellerdetail.designerprofile_image.url }}" alt="Clothing Image" class="img-fluid rounded shadow" />
+                </div>
+            </div>
+
+            <!-- User Details on Right -->
+            <div class="col-md-8 col-sm-12">
+                <div class="content">
+                    <h5>Name: {{ sellerdetail.user.name }}</h5><br>
+                    <h5>Address: {{ sellerdetail.address }}</h5><br>
+                    <h5>Shop name: {{ sellerdetail.company_name }}</h5><br>
+                    <h5>Shop address: {{ sellerdetail.company_address }}</h5><br>
+                    <h5> Year of Experience : {{ sellerdetail.years_of_experience }}</h5><br>
+                    <h5> specialization: {{ sellerdetail.specialization }}</h5><br>
+                    <h5> rating: {{ sellerdetail.rating }}</h5><br>
+                    <h5> availability: {{ sellerdetail.availability }}</h5><br>
+                    <br>
+                    <div class="shop-list-btn">
+                        <a href="/edit_designer" class="btn btn-primary btn-block">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

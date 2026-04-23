@@ -1,0 +1,81 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+    <!-- Navigation -->
+    <section class="navigation">
+      <div class="parallax parallax--nav-3">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>
+                Bidding History
+              </h2>
+              <ul class="breadcrumbs ul--inline ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">Home</a>
+                </li>
+                <span>/</span>
+
+                <li class="active">
+                  Bidding History
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<br><br><br>
+<h3 align="center">Bidding History</h3>
+    <!-- End Navigation -->
+    <!-- Blog Grid 1 -->
+        <div class="quicky-wishlist_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <form action="javascript:void(0)">
+                            <div class="table-content table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="quicky-product-thumbnail">Image</th>
+                                            <th class="cart-product-name">Design Name</th>
+                                            <th class="quicky-product-price">Price</th>
+                                            <th class="quicky-product-price">Description</th>
+                                            <th class="quicky-product-price">Bidding Last Date</th>
+<!--                                            <th class="quicky-product-stock-status">Stock Status</th>-->
+                                            <th class="quicky-cart_btn">Biddings</th>
+<!--                                            <th class="quicky-product_remove">remove</th>-->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for productdetails in allproducts%}
+                                        <tr>
+                                            <td class="quicky-product-thumbnail"><img src="{{productdetails.req_img.url}}" alt="Quicky's Wishlist Thumbnail" width="100px" height="100px"></a>
+                                            </td>
+                                            <td class="quicky-product-name">{{productdetails.req_name}}</td>
+                                            <td class="quicky-product-price"><span class="amount">{{productdetails.initial_amount}}</span></td>
+                                            <td class="quicky-product-price"><span class="amount">{{productdetails.req_desc}}</span></td>
+                                            <td class="quicky-product-price"><span class="amount">{{productdetails.bid_end_date}}</span></td>
+<!--                                            <td class="quicky-product-stock-status"><span class="in-stock">in stock</span></td>-->
+                                            <td class="quicky-cart_btn"><a href=" {% url 'manage_bids' productdetails.id %} ">View Biddings</a></td>
+<!--                                            <td class="quicky-product_remove"><a href=" {% static 'javascript:void(0)' %} "><i class="zmdi zmdi-close"-->
+<!--                                                title="Remove"></i></a></td>-->
+                                        </tr>
+                                    {%endfor%}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- End Blog Grid 1 -->
+
+<br><br><br>
+
+{%endblock%}

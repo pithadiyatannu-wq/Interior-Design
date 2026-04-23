@@ -1,0 +1,59 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+    <!-- Navigation -->
+    <section class="navigation">
+      <div class="parallax parallax--ser-li">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>
+                Designers
+              </h2>
+              <ul class="breadcrumbs ul--inline ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">Home</a>
+                </li>
+                <span>/</span>
+                <li class="active">
+                  Designers
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Navigation -->
+    <!-- Service List -->
+    <section class="service-list">
+      <div class="container">
+        <div class="row">
+          {%for i in alldesigner%}
+          <div class="col-lg-4 col-md-6">
+            <div class="service-list__item">
+              <img alt="Service 1" src="{{i.designerprofile_image.url}}" style="height: 400px; width:400px; object-fit: cover;" />
+              <div class="service-list__text">
+                <h5>
+                  <a href="/portfolio_view/{{i.id}}">{{i.user.name}}</a>
+                </h5>
+                <p>
+                  {{i.address}}
+                </p>
+                {%if request.session.log_id%}
+                <a href="/portfolio_view/{{ i.id }}" class="btn btn-success">View Detail</a>
+                {%else%}
+                <a href="/login" class="btn btn-success">View Detail</a>
+                {%endif%}
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+    </section>
+    <!-- End Service List -->
+
+  {%endblock%}

@@ -1,0 +1,79 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+    <!-- Navigation -->
+    <section class="navigation">
+      <div class="parallax parallax--nav-3">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>
+                Booking Detail
+              </h2>
+              <ul class="breadcrumbs ul--inline ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">Home</a>
+                </li>
+                <span>/</span>
+                <li class="active">
+                  Booking Detail
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Navigation -->
+    <!-- Blog Grid 1 -->
+<br><br><br>
+<h3 align="center">Booking Detail</h3>
+<br>
+<div class="quicky-wishlist_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="table-content table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="cart-product-name">User</th>
+                                <th class="cart-product-name">Designer</th>
+                                <th class="quicky-product-price">Design</th>
+                                <th class="quicky-product-price">Amount</th>
+                                <th class="quicky-product-price">Status</th>
+                                <th class="quicky-product-price">Timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    {% for booking in bookings %}
+                            <tr>
+                                <td class="quicky-product-name">{{ booking.user }}</td>
+                                <td class="quicky-product-name">{{ booking.designer.user.name }}</td>
+                                <td class="quicky-product-price">
+                                {% for designs in booking.designs.all %}
+                                    <span>{{ designs.design_name }}</span>{% if not forloop.last %}, {% endif %}
+                                {% empty %}
+                                    <span>No services selected</span>
+                                {% endfor %}
+                                </td>
+                                <td class="quicky-product-price"><span class="amount">{{ booking.total_price }}</span></td>
+                                <td class="quicky-product-price"><span class="amount">{{ booking.status }}</span></td>
+                                <td class="quicky-product-price"><span class="amount">{{ booking.created_at }}</span></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<br><br><br>
+
+{%endblock%}

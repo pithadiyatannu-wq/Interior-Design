@@ -1,0 +1,543 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+    <!-- End Header Desktop -->
+    <!-- Menu Canvas -->
+    <div id="menu-canvas" class="menu-canvas--hidden">
+      <div class="menu-canvas__inner">
+        <div class="close-menu-canvas">
+          <i class="zmdi zmdi-close" id="btn-close"></i>
+        </div>
+        <h1 class="logo">
+          <a href=" {% static 'index.html' %} ">
+            <img alt="Logo" src=" {% static 'img/logo-white.png' %} ">
+          </a>
+        </h1>
+
+        <div class="menu-canvas-slide">
+          <div class="menu-canvas__image">
+            <div id="sync1" class="owl-carousel owl-theme">
+              <div class="item">
+                <img alt="Project 1" src=" {% static 'img/item-menu-canvas-01.jpg' %} ">
+              </div>
+              <div class="item">
+                <img alt="Project 2" src=" {% static 'img/item-menu-canvas-02.jpg' %} ">
+              </div>
+            </div>
+          </div>
+
+          <div id="sync2" class="owl-carousel owl-theme">
+            <p class="item menu-canvas__detail">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque la udantium
+            </p>
+            <p class="item menu-canvas__detail">
+              Loren son perspiciatis unde omgi iste natus error sit voluptmen accusantium doloremque la udantium
+            </p>
+          </div>
+
+        </div>
+        <div class="social">
+          <a href="#" class="social__item">
+            <i class="zmdi zmdi-facebook"></i>
+          </a>
+          <a href="#" class="social__item">
+            <i class="zmdi zmdi-dribbble"></i>
+          </a>
+          <a href="#" class="social__item">
+            <i class="zmdi zmdi-google"></i>
+          </a>
+          <a href="#" class="social__item">
+            <i class="zmdi zmdi-twitter"></i>
+          </a>
+          <a href="#" class="social__item">
+            <i class="zmdi zmdi-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- End Menu Canvas -->
+    <!-- Slider -->
+    <section class="slide2">
+      <!-- revolution slider begin -->
+      <div class="rev_slider_wrapper">
+        <div id="revolution-slider2" class="rev_slider" data-version="5.4.4" style="display: none;">
+          <ul>
+            <li data-transition="crossfade" data-slotamount="7" data-masterspeed="2000" data-delay="10000">
+              <!--  BACKGROUND IMAGE -->
+              <img src=" {% static 'img/slide-04.jpg' %} " alt="Slide 1">
+              <div class="tp-caption slide-content-2" data-x="center" data-y="center" data-fontsize="[72, 72, 58, 38]" data-lineheight="[106, 106, 76, 50]"
+                data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:bottom;rZ:90deg;sX:2;sY:2;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                we are
+                <span class="color">arch</span>
+              </div>
+
+              <a href="/contact" class="tp-caption au-btn au-btn--big au-btn--pill au-btn--yellow au-btn--slide" data-x="center" data-y="center"
+                data-voffset="['150','150','120','95']" data-frames='[{"delay":3000,"speed":1000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'>
+                Contact now
+              </a>
+            </li>
+
+            <li data-transition="scaledownfromtop" data-slotamount="7" data-masterspeed="1500" data-delay="10000">
+              <!--  BACKGROUND IMAGE -->
+              <img src=" {% static 'img/slide-05.jpg' %} " alt="Slide 2">
+              <div class="tp-caption slide-content-2" data-x="center" data-y="center" data-fontsize="[72, 72, 58, 38]" data-lineheight="[106, 106, 76, 50]"
+                data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                we are
+                <span class="color">arch</span>
+              </div>
+
+              <a href=" {% static 'contact.html' %} " class="tp-caption au-btn au-btn--big au-btn--pill au-btn--yellow au-btn--slide" data-x="center" data-y="center"
+                data-voffset="['150','150','120','95']" data-frames='[{"delay":2200,"speed":1800,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                Contact now
+              </a>
+            </li>
+
+            <li data-transition="crossfade" data-slotamount="7" data-masterspeed="1500" data-delay="10000">
+              <!--  BACKGROUND IMAGE -->
+              <img src=" {% static 'img/slide-16.jpg' %} " alt="Slide 2">
+              <div class="tp-caption slide-content-2" data-x="center" data-y="center" data-fontsize="[72, 72, 58, 38]" data-lineheight="[106, 106, 76, 50]"
+                data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                we are
+                <span class="color">arch</span>
+              </div>
+
+              <a href=" {% static 'contact.html' %} " class="tp-caption au-btn au-btn--big au-btn--pill au-btn--yellow au-btn--slide" data-x="center" data-y="center"
+                data-voffset="['150','150','120','95']" data-frames='[{"delay":2200,"speed":1800,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                Contact now
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- revolution slider end -->
+      <a class="mouse" href=" {% static '#down' %} ">
+        <span class="mouse__wheel"></span>
+        <i class="zmdi zmdi-chevron-down"></i>
+      </a>
+    </section>
+    <!-- End Slider -->
+    <div id="down"></div>
+    <!-- Service 2 -->
+    <section class="service-2">
+      <div class="container clearfix">
+        <div class="service-2-wrap clearfix">
+          <div class="service-2__left wow fadeInLeft" data-wow-duration="1s">
+            <div class="service-2__img">
+              <h2 class="title title-2--special title-small" id="our1">
+                Our
+              </h2>
+              <h2 class="title title-2--special title-small" id="our2">
+                Services
+              </h2>
+              <img alt="Service thumb" src=" {% static 'img/service-page2.jpg' %} ">
+            </div>
+          </div>
+          <div class="service-2__right">
+            <div class="service-2__inner-head wow fadeInDown" data-wow-duration="1s" data-wow-delay=".5s">
+              <h3>
+                arch is your best solution
+              </h3>
+              <p>
+                 We specialize in creating spaces that are not only aesthetically pleasing but also functional and tailored
+            to your needs. With a deep understanding of design principles and a commitment to quality, we transform
+            your vision into reality, ensuring every detail is executed to perfection.
+              </p>
+            </div>
+            <div class="service-2__inner-body wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+              <div class="box-item body__item clearfix">
+                <div class="box-head box-head--border">
+                  <img alt="Icon 1" src=" {% static 'img/icon/icon-service-04.png' %} ">
+                </div>
+                <div class="box-body">
+                  <h5>
+                    <a href=" {% static 'service-list.html' %} ">agency interior</a>
+                  </h5>
+                  <p>
+                Tailored interior designs that enhance the functionality and aesthetic of your business spaces.
+                  </p>
+                </div>
+              </div>
+              <div class="box-item body__item clearfix">
+                <div class="box-head box-head--border">
+                  <img alt="Icon 2" src=" {% static 'img/icon/icon-service-05.png' %} ">
+                </div>
+                <div class="box-body">
+                  <h5>
+                    <a href=" {% static 'service-list.html' %} ">ecommerce interior</a>
+                  </h5>
+                  <p>
+                Innovative designs that make your e-commerce spaces welcoming, modern, and customer-centric.
+                  </p>
+                </div>
+              </div>
+              <div class="box-item body__item clearfix">
+                <div class="box-head box-head--border">
+                  <img alt="Icon 3" src=" {% static 'img/icon/icon-service-06.png' %} ">
+                </div>
+                <div class="box-body">
+                  <h5>
+                    <a href=" {% static 'service-list.html' %} ">residential interior</a>
+                  </h5>
+                  <p>
+                Elegant and functional interiors that turn your house into a warm and stylish home.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- End Service 2 -->
+    <!-- Recent Project -->
+    <section class="recent-project">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+  <h2 class="title title-2">
+    Recent Projects
+    <span class="under-title-2"></span>
+  </h2>
+  <p class="title-detail title-detail--px-45">
+    Explore our latest projects, showcasing our expertise in creating stunning and functional interiors. From residential
+    spaces to commercial designs, each project reflects our commitment to quality and attention to detail.
+  </p>
+</div>
+
+        </div>
+      </div>
+      <div class="parallax parallax--slide-re-pro">
+        <div class="slide-re-pro owl-carousel owl-theme" id="owl-re-pro-2">
+
+          <div class="slide-re-pro__item item">
+            <img alt="Project 1" src=" {% static 'img/recent-pro-01.jpg' %} " class="img-responsive">
+            <div class="pro-link">
+              <div class="pro-info">
+                <h4 class="pro-title">
+                  <a href="#">
+                    VILIANT HOTEL
+                  </a>
+                </h4>
+                <p class="pro-cat-name">
+                  <a href="#">Bedroom</a>
+                  <a href="#">Living room</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide-re-pro__item item">
+            <img alt="Project 2" src=" {% static 'img/recent-pro-02.jpg' %} " class="img-responsive">
+            <div class="pro-link">
+              <div class="pro-info">
+                <h4 class="pro-title">
+                  <a href="#">
+                    AU HOTEL
+                  </a>
+                </h4>
+                <p class="pro-cat-name">
+                  <a href="#">Living room</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide-re-pro__item item">
+            <img alt="Project 3" src=" {% static 'img/recent-pro-03.jpg' %} " class="img-responsive">
+            <div class="pro-link">
+              <div class="pro-info">
+                <h4 class="pro-title">
+                  <a href="#">
+                    HOLLY HOTEL
+                  </a>
+                </h4>
+                <p class="pro-cat-name">
+                  <a href="#">Bedroom</a>
+                  <a href="#">Living room</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="slide-re-pro__item item">
+            <img alt="Project 4" src=" {% static 'img/recent-pro-04.jpg' %} " class="img-responsive">
+            <div class="pro-link">
+              <div class="pro-info">
+                <h4 class="pro-title">
+                  <a href="#">
+                    Beach HOTEL
+                  </a>
+                </h4>
+                <p class="pro-cat-name">
+                  <a href="#">Bedroom</a>
+                  <a href="#">Living room</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="slide-re-pro__item item">
+            <img alt="Project 5" src=" {% static 'img/recent-pro-05.jpg' %} " class="img-responsive">
+            <div class="pro-link">
+              <div class="pro-info">
+                <h4 class="pro-title">
+                  <a href="#">
+                    Skyline HOTEL
+                  </a>
+                </h4>
+                <p class="pro-cat-name">
+                  <a href="#">Bedroom</a>
+                  <a href="#">Living room</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="slide-re-pro__item item">
+            <img alt="Project 6" src=" {% static 'img/recent-pro-06.jpg' %} " class="img-responsive">
+            <div class="pro-link">
+              <div class="pro-info">
+                <h4 class="pro-title">
+                  <a href="#">
+                    Au Office
+                  </a>
+                </h4>
+                <p class="pro-cat-name">
+                  <a href="#">Office</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End Recent Project -->
+    <!-- Our Team -->
+
+    <section class="service-list">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5 col-md-6 col-sm-12 col-12">
+            <h2 class="title title-2">
+              our team
+              <span class="under-title-2">
+              </span>
+            </h2>
+            <p class="title-detail m-b-75 title-detail--px-45">Meet our passionate team of designers and professionals, dedicated to transforming your ideas into reality. With a wealth of experience and a commitment to excellence, our team collaborates to create spaces that inspire, uplift, and resonate with your vision.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          {%for i in alldesigner%}
+          <div class="col-lg-4 col-md-6">
+            <div class="service-list__item">
+              <img alt="Service 1" src="{{i.designerprofile_image.url}}" style="height: 400px; width:400px; object-fit: cover;" />
+              <div class="service-list__text">
+                <h5>
+                  <a href="/portfolio_view/{{i.id}}">{{i.user.name}}</a>
+                </h5>
+                <p>
+                  {{i.address}}
+                </p>
+                {%if request.session.log_id%}
+                <a href="/portfolio_view/{{ i.id }}" class="btn btn-success">View Detail</a>
+                {%else%}
+                <a href="/login" class="btn btn-success">View Detail</a>
+                {%endif%}
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- End Our Team -->
+    <!-- Recent News -->
+    <section class="recent-news">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5 col-md-6 col-sm-12 col-12">
+            <h2 class="title title-2">
+              recent news
+              <span class="under-title-2">
+              </span>
+            </h2>
+            <p class="title-detail m-b-75 title-detail--px-45">
+              Stay updated with the latest trends, insights, and updates from the world of interior design. Discover what’s new at our agency
+              and get inspired by our innovative ideas and accomplishments.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="img-blog m-b-40 m-t-20">
+              <a href=" {% static 'blog-detail.html' %} ">
+                <img alt="Blog 1" src=" {% static 'img/blog-04.jpg' %} ">
+                <div class="date date--big">
+                  <div class="date__inner">
+                    <span class="day">15</span>
+                    <span class="month">feb</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="blog-content">
+              <h4 class="blog-title m-b-10">
+                <a href=" {% static 'blog-detail.html' %} ">morden interior</a>
+              </h4>
+              <div class="blog-link clearfix m-b-8">
+                <div class="blog-link__item">
+                  <span>
+                    15
+                  </span>
+                  <a href="#">
+                    <i class="fa fa-commenting-o"></i>
+                  </a>
+                </div>
+                <div class="blog-link__item">
+                  <span>
+                    12
+                  </span>
+                  <a href="#">
+                    <i class="fa fa-thumbs-o-up"></i>
+                  </a>
+                </div>
+                <div class="blog-link__item">
+                  <span>
+                    10
+                  </span>
+                  <a href="#">
+                    <i class="fa fa-share"></i>
+                  </a>
+                </div>
+              </div>
+              <p>
+  Discover the perfect blend of elegance and functionality with our modern interior solutions. We craft spaces that reflect contemporary aesthetics, ensuring every detail embodies sophistication and innovation, tailored to your lifestyle.
+</p>
+
+            </div>
+            <div class="see-more see-more--left">
+              <a href=" {% static 'blog-detail.html' %} " class="au-btn au-btn--big au-btn--pill au-btn--yellow au-btn--white">See More</a>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="img-blog m-b-40 m-t-20">
+              <a href=" {% static 'blog-detail.html' %} ">
+                <img alt="Blog 2" src=" {% static 'img/blog-05.jpg' %} ">
+                <div class="date date--big">
+                  <div class="date__inner">
+                    <span class="day">24</span>
+                    <span class="month">feb</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="blog-content">
+              <h4 class="blog-title m-b-10">
+                <a href=" {% static 'blog-detail.html' %} ">form Ideal to master piece</a>
+              </h4>
+              <div class="blog-link clearfix m-b-8">
+                <div class="blog-link__item">
+                  <span>
+                    15
+                  </span>
+                  <a href="#">
+                    <i class="fa fa-commenting-o"></i>
+                  </a>
+                </div>
+                <div class="blog-link__item">
+                  <span>
+                    12
+                  </span>
+                  <a href="#">
+                    <i class="fa fa-thumbs-o-up"></i>
+                  </a>
+                </div>
+                <div class="blog-link__item">
+                  <span>
+                    10
+                  </span>
+                  <a href="#">
+                    <i class="fa fa-share"></i>
+                  </a>
+                </div>
+              </div>
+              <p>
+  Transform your vision into a masterpiece with our expertise. From concept to creation, we bring your ideas to life, blending innovation, precision, and artistry to craft spaces that inspire and endure.
+</p>
+
+            </div>
+            <div class="see-more see-more--left">
+              <a href=" {% static 'blog-detail.html' %} " class="au-btn au-btn--big au-btn--pill au-btn--yellow au-btn--white">See More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Recent News -->
+    <!-- Testimonial -->
+<section class="testi">
+  <div class="parallax parallax-testi">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6 col-sm-12 col-12">
+          <h2 class="title title-2 title-f8">
+            What Our Clients Say
+            <span class="under-title-2"></span>
+          </h2>
+        </div>
+      </div>
+      <div class="row justify-content-center owl-carousel owl-theme" id="owl-testi">
+        <div class="testi__item item">
+          <blockquote>
+            <i class="fa fa-quote-left big-qoute"></i>
+            "Working with this team has been a dream! Their innovative designs transformed my home into a masterpiece that perfectly matches my vision."
+          </blockquote>
+          <div class="testi-img">
+            <img alt="Testi 1" src="{% static 'img/testi-01.jpg' %}">
+          </div>
+          <h6 class="testi-name">Vivan Sharma</h6>
+          <p class="testi-job">
+            <em>Interior Designer</em>
+          </p>
+        </div>
+        <div class="testi__item item">
+          <blockquote>
+            <i class="fa fa-quote-left big-qoute"></i>
+            "Their attention to detail and professionalism are unmatched. The design exceeded my expectations and brought my ideas to life."
+          </blockquote>
+          <div class="testi-img">
+            <img alt="Testi 2" src="{% static 'img/testi-03.jpg' %}">
+          </div>
+          <h6 class="testi-name">Jay Agnihotri</h6>
+          <p class="testi-job">
+            <em>Client</em>
+          </p>
+        </div>
+        <div class="testi__item item">
+          <blockquote>
+            <i class="fa fa-quote-left big-qoute"></i>
+            "I couldn't be happier with the final outcome. The team's creativity and dedication made the entire process enjoyable and stress-free."
+          </blockquote>
+          <div class="testi-img">
+            <img alt="Testi 3" src="{% static 'img/testi-04.jpg' %}">
+          </div>
+          <h6 class="testi-name">Rahul Divan</h6>
+          <p class="testi-job">
+            <em>Homeowner</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- End Testimonial -->
+    <!-- Partner -->
+    <!-- End Partner -->
+ {%endblock%}

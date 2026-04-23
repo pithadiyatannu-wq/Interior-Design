@@ -1,0 +1,125 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+
+
+    <section class="navigation">
+      <div class="parallax parallax--nav-1">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>
+                Requirement Detail
+              </h2>
+              <ul class="breadcrumbs ul--inline ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">Home</a>
+                </li>
+                <span>/</span>
+                <li>
+                  <a href="#">Pages</a>
+                </li>
+                <span>/</span>
+                <li class="active">
+                  Add  Design Detail
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<!---728x90--->
+<section class="design-detail">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 col-sm-12">
+                <div class="design-detail-content border shadow-sm p-4 rounded bg-white">
+                    <h3 class="text-center mb-4 text-primary">Requirement Detail</h3>
+                    <p class="text-center text-muted mb-4">Please provide your Design details</p>
+                    <form action="/addrequirements" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <!-- Design Name -->
+                        <div class="form-group mb-3">
+                            <label for="id_design_name" class="form-label">Design Name</label>
+                            <input
+                                type="text"
+                                name="req_name"
+                                id="id_design_name"
+                                class="form-control rounded-pill"
+                                placeholder="Enter the Design Name"
+                                required>
+                        </div>
+
+                        <!-- Design Type -->
+                        <div class="form-group mb-3">
+                            <label for="id_design_type" class="form-label">Design Type</label>
+                            <select
+                                name="req_status"
+                                id="id_design_type"
+                                class="form-control rounded-pill"
+                                required>
+                                <option value="0">Open</option>
+                                <option value="1">Close</option>
+                            </select>
+                        </div>
+
+
+                        <!-- Image Upload -->
+                        <div class="form-group mb-3">
+                            <label for="id_design_image" class="form-label">Design Image</label>
+                            <input
+                                type="file"
+                                name="design_image"
+                                id="id_design_image"
+                                class="form-control-file"
+                                required
+                                oninput="
+                                    const file = this.files[0];
+                                    if (!file) {
+                                        this.setCustomValidity('Design image is required');
+                                        this.reportValidity();
+                                    } else {
+                                        const validImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
+                                        if (!validImageTypes.includes(file.type)) {
+                                            this.setCustomValidity('Only JPG, PNG, and GIF images are allowed');
+                                            this.reportValidity();
+                                        } else {
+                                            this.setCustomValidity('');
+                                            this.reportValidity();
+                                        }
+                                    }">
+                        </div>
+
+
+                        <!-- Project Description -->
+                        <div class="form-group mb-3">
+                            <label for="id_project_description" class="form-label">Project Description</label>
+                            <textarea
+                                name="req_desc"
+                                id="id_project_description"
+                                class="form-control rounded-pill"
+                                rows="4"
+                                placeholder="Describe the project"
+                                required></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-block w-100 py-2 rounded-pill shadow">
+                                Save Design
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{%endblock%}

@@ -1,0 +1,97 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+    <!-- Navigation -->
+    <section class="navigation">
+      <div class="parallax parallax--nav-3">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>
+                Requirement Details
+              </h2>
+              <ul class="breadcrumbs ul--inline ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">Home</a>
+                </li>
+                <span>/</span>
+                <li>
+                  <a href="#">User Requirements</a>
+                </li>
+                <span>/</span>
+                <li class="active">
+                  Requirement Details
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Navigation -->
+    <!-- Blog Grid 1 -->
+<br><br>
+<h3 align="center">Requirement Detail</h3>
+<div class="sp-area py-5" style="background: linear-gradient(to right, #f3f4f6, #e9ecef);">
+    <div class="container">
+        <div class="card product-card shadow-lg rounded-lg border-0">
+            <div class="row no-gutters align-items-center">
+                <!-- Image Section -->
+                <div class="col-lg-5">
+                    <div class="product-image text-center p-4">
+                        <img src="{{ product.req_img.url }}" alt="Rent Arena product image" class="img-fluid rounded shadow-sm" style="width: 100%; max-height: 450px; object-fit: cover;">
+                    </div>
+                </div>
+
+                <!-- Product Details Section -->
+                <div class="col-lg-7">
+                    <div class="card-body p-4">
+                        <!-- Product Title and Category -->
+                        <h1 class="text-primary font-weight-bold mb-1">{{ product.req_name }}</h1>
+                        <p class="text-muted">{{ product.property_cat.name }}</p>
+
+                        <!-- Description -->
+                        <p class="text-dark mt-3 mb-4"><strong>Description:</strong> {{ product.req_desc }}</p>
+
+                        <!-- Product Pricing and Bid Info -->
+                        <div class="product-info mb-4">
+                            <h5 class="text-secondary mb-2"><strong>Price:</strong> <span class="text-primary">₹{{ product.initial_amount }}</span></h5>
+                            <h5 class="text-secondary mb-2"><strong>Current Highest Bid:</strong> <span class="text-success">₹{{ product.current_highest_bid }}</span></h5>
+                            <h5 class="text-secondary"><strong>Bid End Date:</strong> <span class="text-danger">{{ product.bid_end_date }}</span></h5>
+                        </div>
+
+                        <!-- Bid Section -->
+                        <div class="bid-section mt-4">
+                            {% if is_sold %}
+                                <h3 class="text-danger font-weight-bold">Sold Out</h3>
+                            {% else %}
+                                <h4 class="font-weight-bold text-primary">Place a Bid</h4>
+                                <form method="POST" action="{% url 'place_bid' product.id %}">
+                                    {% csrf_token %}
+                                    <div class="input-group mb-3">
+                                        <input type="number" name="bid_amount" id="bid_amount" class="form-control" min="{{ product.current_highest_bid|add:product.minimum_bid_increment }}" placeholder="Enter bid amount" required>
+                                        <div class="input-group-append">
+                                            {% if profile != None %}
+                                            <button type="submit" class="btn btn-primary">Place Bid</button>
+
+                                            {%else%}
+                                            <a href="/addrenters" class="btn btn-primary">Complete Profile</a>
+
+                                            {%endif%}
+                                        </div>
+                                    </div>
+                                </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- End Blog Grid 1 -->
+<br><br>
+{%endblock%}

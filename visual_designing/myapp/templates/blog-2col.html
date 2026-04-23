@@ -1,0 +1,85 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+    <!-- Navigation -->
+    <section class="navigation">
+      <div class="parallax parallax--nav-3">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>
+                Requirements
+              </h2>
+              <ul class="breadcrumbs ul--inline ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">Home</a>
+                </li>
+                <span>/</span>
+                <li class="active">
+                  User Requirements
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Navigation -->
+    <!-- Blog Grid 1 -->
+    <div class="blog1">
+      <div class="container">
+        <div class="row">
+          {%for i in alldetail%}
+        <div id="isotope-grid" class="clearfix">
+          <div class="col-md-6 item design">
+            <div class="blog-item">
+              <div class="img-blog">
+                <a href="#">
+                  <img alt="Blog 1" src="{{i.req_img.url}}">
+                </a>
+              </div>
+              <div class="blog-content">
+                <h4 class="blog-title">
+                  <a href="#">{{i.req_name}}</a>
+                </h4>
+                <p class="blog-meta">
+                 By {{i.user.name}}
+
+                </p>
+                <p>
+                  {{i.req_desc}}
+                </p><br><br>
+                <a href="{% url 'single_property' i.id %}">View Design Detail</a>
+
+              </div>
+            </div>
+          </div>
+          <!-- End Item -->
+        </div>
+          {%endfor%}
+      </div>
+        </div>
+
+    </div>
+    <!-- End Blog Grid 1 -->
+    <!-- Contact -->
+    <section class="contact">
+      <div class="parallax parallax--contact parallax--contact1">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="contact__inner clearfix">
+                <p class="contact__content">
+                  We are the reliable partner to help you complete the work
+                </p>
+                <a href=" {% static 'contact.html' %} " class="au-btn au-btn--big au-btn--pill au-btn--dark">Contact Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Contact -->
+{%endblock%}

@@ -1,0 +1,177 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+
+    <section class="navigation">
+      <div class="parallax parallax--nav-1">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>
+                about us
+              </h2>
+              <ul class="breadcrumbs ul--inline ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">Home</a>
+                </li>
+                <span>/</span>
+                <li>
+                  <a href="#">Pages</a>
+                </li>
+                <span>/</span>
+                <li class="active">
+                  Designer Profile
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<!---728x90--->
+<section class="vendor-detail">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-10">
+                <div class="vendor-detail-content border shadow-sm p-4 rounded bg-white">
+                    <h3 class="text-center mb-4 text-primary">Update Designer Detail</h3>
+                    <p class="text-center text-muted mb-4">Update your Designer details</p>
+                    <form action="/updatedesigner" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <!-- Address Field -->
+                        <div class="form-group mb-3">
+                            <label for="id_address" class="form-label">Address</label>
+                            <textarea
+                                name="address2"
+                                id="id_address"
+                                class="form-control rounded-pill"
+                                rows="4"
+                                required>{{data.address}}</textarea>
+                        </div>
+
+                        <!-- Profile Image -->
+                        <div class="form-group mb-3">
+                            <label for="id_designerprofile_image" class="form-label">Profile Image</label>
+                            <div class="mb-3">
+                                <img src="/media/{{data.designerprofile_image}}" width="100px" class="rounded shadow-sm">
+                            </div>
+                            <input
+                                type="file"
+                                name="seller1"
+                                id="id_designerprofile_image"
+                                class="form-control-file"
+                                accept="image/*"
+                                oninput="
+                                    const file = this.files[0];
+                                    if (!file) {
+                                        this.setCustomValidity('');
+                                    } else {
+                                        const validImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
+                                        if (!validImageTypes.includes(file.type)) {
+                                            this.setCustomValidity('Only JPG, PNG, and GIF images are allowed');
+                                            this.reportValidity();
+                                        } else {
+                                            this.setCustomValidity('');
+                                            this.reportValidity();
+                                        }
+                                    }">
+                        </div>
+
+                        <!-- Shop Name -->
+                        <div class="form-group mb-3">
+                            <label for="id_company_name" class="form-label">Company Name</label>
+                            <input
+                                type="text"
+                                name="company_name2"
+                                id="id_company_name"
+                                class="form-control rounded-pill"
+                                value="{{data.company_name}}"
+                                placeholder="Enter your Company name"
+                                required>
+                        </div>
+
+                        <!-- Shop Address -->
+                        <div class="form-group mb-3">
+                            <label for="id_company_address" class="form-label">Company Address</label>
+                            <textarea
+                                name="company_address2"
+                                id="id_company_address"
+                                class="form-control rounded-pill"
+                                rows="4"
+                                required>{{data.company_address}}</textarea>
+                        </div>
+
+                        <!-- Years of Experience -->
+                        <div class="form-group mb-3">
+                            <label for="id_years_of_experience" class="form-label">Years of Experience</label>
+                            <input
+                                type="number"
+                                name="years_of_experience2"
+                                id="id_years_of_experience"
+                                class="form-control rounded-pill"
+                                placeholder="Enter years of experience"
+                                value="{{data.years_of_experience}}"
+                                required
+                                min="1">
+                        </div>
+
+                        <!-- Specialization -->
+                        <div class="form-group mb-3">
+                            <label for="id_specialization" class="form-label">Specialization</label>
+                            <input
+                                type="text"
+                                name="specialization2"
+                                id="id_specialization"
+                                class="form-control rounded-pill"
+                                placeholder="Enter your specialization"
+                                value="{{data.specialization}}"
+                                required>
+                        </div>
+
+                        <!-- Ratings -->
+                        <div class="form-group mb-3">
+                            <label for="id_ratings" class="form-label">Ratings</label>
+                            <input
+                                type="number"
+                                name="ratings2"
+                                id="id_ratings"
+                                class="form-control rounded-pill"
+                                placeholder="Enter ratings (0-5)"
+                                value="{{data.rating}}"
+                                required
+                                min="0" max="5">
+                        </div>
+
+                        <!-- Availability -->
+                        <div class="form-group mb-3">
+                            <label for="id_availability" class="form-label">Availability</label>
+                            <select
+                                name="availability2"
+                                id="id_availability"
+                                class="form-control rounded-pill"
+                                required>
+                                <option value="Available" {% if data.availability == "Available" %}selected{% endif %}>Available</option>
+                                <option value="Not Available" {% if data.availability == "Not Available" %}selected{% endif %}>Not Available</option>
+                            </select>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-block w-100 py-2 rounded-pill shadow">
+                                Save Profile
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{%endblock%}

@@ -1,0 +1,84 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+
+    <section class="navigation">
+      <div class="parallax parallax--nav-1">
+        <div class="container clearfix">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>
+                about us
+              </h2>
+              <ul class="breadcrumbs ul--inline ul--no-style">
+                <li>
+                  <a href=" {% static 'index.html' %} ">Home</a>
+                </li>
+                <span>/</span>
+                <li>
+                  <a href="#">Pages</a>
+                </li>
+                <span>/</span>
+                <li class="active">
+                 User Detail
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+<!---728x90--->
+<form class="custom-form" action="/update" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-10">
+                <div class="vendor-detail-content border shadow-sm p-4 rounded bg-white">
+                    <h3 class="text-center mb-4 text-primary">User Detail</h3>
+                    <p class="text-center text-muted mb-4">Please provide your details</p>
+
+                    <div class="custom-form-input mb-3">
+                        <label for="address">Address</label>
+                        <textarea class="form-control rounded-pill" id="address" name="address1" rows="4" required>{{data.address}}</textarea>
+                    </div>
+
+                    <div class="custom-form-input mb-3">
+                        <label>Profile Image:</label>
+                        <img src="/media/{{data.userprofile_image}}" width="100px">
+                        <input type="file" name="profile_image1" class="form-control-file" accept="image/*">
+                    </div>
+
+                    <div class="custom-form-input mb-3">
+                        <label for="date_of_birth">Date of Birth</label>
+                        <input type="date" class="form-control rounded-pill" id="date_of_birth" name="date_of_birth1" value="{{data.date_of_birth | date:'Y-m-d'}}" required>
+                    </div>
+
+                    <div class="custom-form-input mb-3">
+                        <label for="profession">Profession</label>
+                        <input type="text" class="form-control rounded-pill" id="profession" name="profession1" value="{{data.profession}}" required>
+                    </div>
+
+                    <div class="custom-form-input mb-3">
+                        <label for="bio">Bio</label>
+                        <input type="text" class="form-control rounded-pill" name="bio1" id="bio" value="{{data.bio}}" required>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-block w-100 py-2 rounded-pill shadow">
+                            Save Profile
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{%endblock%}
